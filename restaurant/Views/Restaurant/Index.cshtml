@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("Search", "Restaurant", FormMethod.Post))
+    {
+        <div>
+            <input name="postcode" />
+            <input name="submit" type="submit" id="submit" value="Search" />
+        </div>
+    }
+</body>
+</html>

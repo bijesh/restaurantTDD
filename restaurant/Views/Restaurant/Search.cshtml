@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model restaurant.Models.RestaurantViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+<body>
+    <div>
+        <div><b>Name</b></div>
+        <div><b>Rating</b></div>
+        <div><b>Cuisine Type</b></div>
+    </div>
+    <br />
+    <div>
+        @foreach (var item in Model.RestaurantList)
+        {
+            <div>
+                @Html.DisplayFor(modelItem => item.RestaurantName)
+            </div>
+            <div>
+                @Html.DisplayFor(modelItem => item.Rating)
+                
+            </div>
+            <div>
+                
+                @foreach (var cuisine in item.CuisineList)
+                {
+                    <div>
+                        @Html.DisplayFor(modelItem => cuisine)
+                    </div>
+                }
+            </div>
+            <br/>
+        }
+    </div>
+
+</body>
+</html>
